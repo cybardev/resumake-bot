@@ -1,0 +1,14 @@
+# Render Blueprint
+version: "1"
+services:
+  - type: web
+    plan: free
+    region: ohio
+    name: pycord-bot # (optional) change this to match bot name
+    runtime: image
+    image:
+      # TODO: change below URL to match your repository
+      url: ghcr.io/cybardev/pycord-template:latest
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
