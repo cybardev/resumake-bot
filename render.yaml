@@ -4,11 +4,10 @@ services:
   - type: web
     plan: free
     region: ohio
-    name: pycord-bot # (optional) change this to match bot name
+    name: resumake-bot
     runtime: image
     image:
-      # TODO: change below URL to match your repository
-      url: ghcr.io/cybardev/pycord-template:latest
+      url: ghcr.io/cybardev/resumake-bot:latest
     envVars:
       - key: BOT_TOKEN
         sync: false
