@@ -6,17 +6,18 @@ from utils import main
 
 bot = discord.Bot()
 
-# ----------------- TODO: MAKE CHANGES BELOW ----------------- #
 
-
-@bot.slash_command(description="Say hello")
-@discord.option("name", description="Who to greet")
-async def hello(ctx, name: str = None):
-    name = name or ctx.author.name
-    await ctx.respond(f"Hello, {name}!")
-
-
-# ----------------- TODO: MAKE CHANGES ABOVE ----------------- #
+@bot.slash_command(
+    description="Generate PDF resume from user information in YAML format"
+)
+@discord.option("file", description="YAML input file")
+async def resumake(ctx, file: discord.Attachment):
+    # TODO:
+    # - read in file
+    # - send it to hosted resumake
+    # - get converted resume
+    # - return resume PDF
+    await ctx.respond("<PLACEHOLDER>")
 
 
 def serve_bot(token):
