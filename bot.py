@@ -24,9 +24,5 @@ async def resumake(ctx, file: discord.Attachment):
     await ctx.respond("<PLACEHOLDER>")
 
 
-def serve_bot(token):
-    bot.run(token)
-
-
 if __name__ == "__main__":
-    main(serve_bot)
+    main(bot)
