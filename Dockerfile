@@ -1,6 +1,7 @@
 # syntax = docker/dockerfile:1.6
 
 FROM python:3.12-alpine3.20 AS main
+RUN apk --no-cache add curl
 WORKDIR /app
 
 COPY requirements.txt ./
