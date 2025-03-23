@@ -8,7 +8,11 @@ bot = discord.Bot()
 
 
 @bot.slash_command(
-    description="Generate PDF resume from user information in YAML format"
+    description="Generate PDF resume from user information in YAML format",
+    integration_types={
+        discord.IntegrationType.guild_install,
+        discord.IntegrationType.user_install,
+    },
 )
 @discord.option("file", description="YAML input file")
 async def resumake(ctx, file: discord.Attachment):
