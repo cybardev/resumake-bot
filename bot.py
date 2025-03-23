@@ -16,6 +16,7 @@ bot = discord.Bot()
 )
 @discord.option("file", description="YAML input file")
 async def resumake(ctx, file: discord.Attachment, filename: str = "resume"):
+    await ctx.defer()
     await file.save(f"{filename}.yaml")
     await generate_resume(filename)
     await ctx.respond(file=discord.File(f"{filename}.pdf"))
