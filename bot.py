@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+import os
 
 import discord
 
-from utils import main, generate_resume
+from utils import generate_resume
 
 bot = discord.Bot()
 
@@ -15,6 +16,7 @@ bot = discord.Bot()
     },
 )
 @discord.option("file", description="YAML input file")
+@discord.option("filename", description="PDF file name (without extension)")
 async def resumake(ctx, file: discord.Attachment, filename: str = "resume"):
     await ctx.defer()
     await file.save(f"{filename}.yaml")
@@ -23,4 +25,4 @@ async def resumake(ctx, file: discord.Attachment, filename: str = "resume"):
 
 
 if __name__ == "__main__":
-    main(bot)
+    bot.run(os.getenv("BOT_TOKEN"))
