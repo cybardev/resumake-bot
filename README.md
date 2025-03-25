@@ -15,5 +15,6 @@ Discord bot to convert YAML resume files to PDF using [Resumake](<https://github
 
 4. Deploy bot to Azure Container Apps through [portal.azure.com](https://portal.azure.com)
     - Set the `BOT_TOKEN` environment variable to source from a secret storing your bot's token (Discord Developer Portal `>` Bot `>` Token)
+    - Azure was chosen here because it's free and doesn't spin down when idle. Feel free to deploy on a platform of your choice.
 
 5. Send `/resumake <file> <filename:optional>` in a server/guild with the bot and attach a YAML file in [this format](<https://github.com/cybardev/resumake/blob/main/resume.yml> "YAML data input format for Resumake") and give an optional filename to get back a PDF resume.
